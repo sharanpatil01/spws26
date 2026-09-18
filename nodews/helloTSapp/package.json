@@ -1,0 +1,20 @@
+{
+  "name": "hellotsapp",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tsx src/app.ts",
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^26.6.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2"
+  }
+}
