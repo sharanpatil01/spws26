@@ -1,3 +1,3 @@
-const hello:string = "Hello, TypeScript !!";
+const message:string = "Hello, TypeScript !!";
 
-console.log(hello);
+console.log(message);
