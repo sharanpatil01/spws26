@@ -1,12 +1,13 @@
 {
   "name": "hellotsapp",
   "version": "1.0.0",
-  "main": "dist/app.js",
+  "main": "dist/server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx tsx src/app.ts",
+    "dev": "npx tsx src/server.ts",
     "build": "tsc",
-    "start": "node dist/app.js"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,11 @@
   "description": "",
   "devDependencies": {
     "@types/node": "^26.6.1",
+    "fastify": "^5.12.5",
     "tsx": "^4.23.13",
     "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }
