@@ -1,2 +1,3 @@
 nodews/fastifyapp1/node_modules/*
 nodews/helloTsapp/node_modules/*
+nodews/helloTsapp/dist/*
