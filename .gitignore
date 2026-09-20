@@ -1,3 +1,11 @@
 nodews/fastifyapp1/node_modules/*
+nodews/fastifyapp1/dist/*
+
+nodews/fastifyapp2/node_modules/*
+nodews/fastifyapp2/dist/*
+
+nodews/fastifyZodApp/node_modules/*
+nodews/fastifyZodApp/dist/*
+
 nodews/helloTsapp/node_modules/*
 nodews/helloTsapp/dist/*
