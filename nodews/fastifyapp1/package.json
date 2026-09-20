@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "node project with fastify app, to create server app",
   "main": "dist/app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
     "dev": "npx tsx src/server.js",
