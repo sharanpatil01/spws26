@@ -35,21 +35,23 @@ type Student = {
   name: string;
   grade: string;
   contactno: string;
+  major: string;
 };
 
 const studentSchema = z.object({
   sno: z.number().int().positive(),
   name: z.string().min(3, 'name should be at least 3 characters').max(12, 'name should be less than 12 characters'),
   grade: z.string().max(4, 'grade should be less than 4 characters').min(1, 'grade should be at least 1 character'),
-  contactno: z.string().max(11, 'contact number should be less than 11 characters').min(6, 'contact number should be at least 6 characters')
+  contactno: z.string().max(11, 'contact number should be less than 11 characters').min(6, 'contact number should be at least 6 characters'),
+  major: z.enum(['Math', 'Science', 'Arts', 'Engineering']).default('Science')
 });
 
 const students: Student[] = [
-  { sno: 1, name: 'Alice', grade: 'A', contactno: '555-0101' },
-  { sno: 2, name: 'Bob', grade: 'B', contactno: '555-0102' },
-  { sno: 3, name: 'Charlie', grade: 'A', contactno: '555-0103' },
-  { sno: 4, name: 'David', grade: 'C', contactno: '555-0104' },
-  { sno: 5, name: 'Eve', grade: 'B', contactno: '555-0105' },
+  { sno: 1, name: 'Alice', grade: 'A', contactno: '555-0101', major: 'Science' },
+  { sno: 2, name: 'Bob', grade: 'B', contactno: '555-0102', major: 'Engineering' },
+  { sno: 3, name: 'Charlie', grade: 'A', contactno: '555-0103', major: 'Arts' },
+  { sno: 4, name: 'David', grade: 'C', contactno: '555-0104', major: 'Math' },
+  { sno: 5, name: 'Eve', grade: 'B', contactno: '555-0105', major: 'Engineering' }
 ];
 
 server.get('/students', async (request, reply) => {
@@ -60,6 +62,8 @@ server.post('/students', async (request, reply) => {
   console.log('Request body:', request.body);
   
   const student = request.body as Student;
+  student.sno = students.length + 1; // Automatically assign a new sno based on the current length of the students array
+
 
   const validationResult = studentSchema.safeParse(student);
   
