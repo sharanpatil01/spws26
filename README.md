@@ -1,4 +1,7 @@
-This Repository "SPWS26" holds all projects I worked on and committed in 2026:
+
+
+**[github.com/sharanpatil01/SPWS26] repository**, 
+holds all projects I worked on and committed in 2026:
 
 helloTSapp:
   REST API:
