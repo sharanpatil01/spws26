@@ -9,3 +9,6 @@ nodews/fastifyZodApp/dist/*
 
 nodews/helloTsapp/node_modules/*
 nodews/helloTsapp/dist/*
+
+nodews/craftsite/node_modules/
+nodews/craftsite/dist/
