@@ -19,3 +19,23 @@ cards.forEach((card) => {
   })
   card.addEventListener('mouseleave', () => { card.style.transform = '' })
 })
+
+const savedTheme = localStorage.getItem('craftsite-theme')
+const useDarkTheme = savedTheme ? savedTheme === 'dark' : true
+const themeButton = document.querySelector('[data-theme-toggle]')
+
+function applyTheme(isDark) {
+  document.body.classList.toggle('dark-theme', isDark)
+  if (themeButton) {
+    themeButton.innerHTML = isDark ? '<span aria-hidden="true">☀</span>' : '<span aria-hidden="true">◐</span>'
+    themeButton.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode')
+    themeButton.setAttribute('aria-pressed', String(isDark))
+  }
+  localStorage.setItem('craftsite-theme', isDark ? 'dark' : 'light')
+}
+
+applyTheme(useDarkTheme)
+
+themeButton?.addEventListener('click', () => {
+  applyTheme(!document.body.classList.contains('dark-theme'))
+})
